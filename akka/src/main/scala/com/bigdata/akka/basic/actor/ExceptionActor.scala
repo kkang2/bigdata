@@ -12,6 +12,7 @@ class ExceptionActor extends Actor with ActorLogging {
   		case "IllegalArgumentException" 	=> throw new IllegalArgumentException("IllegalArgumentException")
   		case "Exception" 									=> throw new Exception("Exception")
   		case "ActorKilledException" 				=> throw ActorKilledException("Exception")
+  		case "Who are you?" 							=> log.info("it's me : {}", self)
   	}
 	
 	override def preStart() {
