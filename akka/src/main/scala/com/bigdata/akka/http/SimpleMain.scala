@@ -14,15 +14,11 @@ object SimpleMain extends App {
    // needed for the future flatMap/onComplete in the end
    implicit val executionContext = system.dispatcher
 
-   val route =
-   	path("hello") {
-		println("요청들어옴")
-		Thread.sleep(8000)
-		println("요청해결함")
-        get {
-          complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "<h1>Get Request Say hello to akka-http</h1>"))
-        }
+   val route = path("hello") {
+   	get {
+      	complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "<h1>Get Request Say hello to akka-http</h1>"))
       }
+	}
 
     val bindingFuture = Http().bindAndHandle(route, "0.0.0.0", 8080)
 

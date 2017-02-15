@@ -37,6 +37,7 @@
 	    <version>${akka.version}</version>
 	</dependency>
 	
+	<!-- akka persistence dependency -->
 	<dependency>
 	    <groupId>com.typesafe.akka</groupId>
 	    <artifactId>akka-persistence_2.11</artifactId>
@@ -55,12 +56,14 @@
 	    <version>1.8</version>
 	</dependency>
 	
+	<!-- akka cluster dependency -->
 	<dependency>
 	    <groupId>com.typesafe.akka</groupId>
 	    <artifactId>akka-cluster_2.11</artifactId>
 	    <version>${akka.version}</version>
 	</dependency>
 	
+	<!-- akka http dependency -->
 	<dependency>
 		<groupId>com.typesafe.akka</groupId>
 		<artifactId>akka-http_2.11</artifactId>
