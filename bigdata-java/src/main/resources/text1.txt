@@ -1,0 +1,16 @@
+[INFO] [02/16/2017 17:25:36.736] [main] [akka.remote.Remoting] Starting remoting
+[INFO] [02/16/2017 17:25:37.241] [main] [akka.remote.Remoting] Remoting started; listening on addresses :[akka.tcp://ClusterSystem@127.0.0.1:2551]
+[INFO] [02/16/2017 17:25:37.256] [main] [akka.cluster.Cluster(akka://ClusterSystem)] Cluster Node [akka.tcp://ClusterSystem@127.0.0.1:2551] - Starting up...
+[INFO] [02/16/2017 17:25:37.336] [main] [akka.cluster.Cluster(akka://ClusterSystem)] Cluster Node [akka.tcp://ClusterSystem@127.0.0.1:2551] - Registered cluster JMX MBean [akka:type=Cluster]
+[INFO] [02/16/2017 17:25:37.336] [main] [akka.cluster.Cluster(akka://ClusterSystem)] Cluster Node [akka.tcp://ClusterSystem@127.0.0.1:2551] - Started up successfully
+[WARN] [02/16/2017 17:25:38.478] [ClusterSystem-akka.remote.default-remote-dispatcher-6] 
+[akka.cluster.Cluster(akka://ClusterSystem)] Cluster Node [akka.tcp://ClusterSystem@127.0.0.1:2551] - Node [akka.tcp://ClusterSystem@127.0.0.1:2551] is JOINING, roles []
+[akka.cluster.Cluster(akka://ClusterSystem)] Cluster Node [akka.tcp://ClusterSystem@127.0.0.1:2551] - Leader is moving node [akka.tcp://ClusterSystem@127.0.0.1:2551] to [Up]
+[akka.tcp://ClusterSystem@127.0.0.1:2551/user/simpleClusterActor1] Member is Up: akka.tcp://ClusterSystem@127.0.0.1:2551
+[akka.tcp://ClusterSystem@127.0.0.1:2551/user/simpleClusterActor2] Member is Up: akka.tcp://ClusterSystem@127.0.0.1:2551
+[akka.cluster.Cluster(akka://ClusterSystem)] Cluster Node [akka.tcp://ClusterSystem@127.0.0.1:2551] - Node [akka.tcp://ClusterSystem@127.0.0.1:2552] is JOINING, roles []
+[akka.tcp://ClusterSystem@127.0.0.1:2551/user/simpleClusterActor1] Member status changed to Joining: akka.tcp://ClusterSystem@127.0.0.1:2552
+[akka.tcp://ClusterSystem@127.0.0.1:2551/user/simpleClusterActor2] Member status changed to Joining: akka.tcp://ClusterSystem@127.0.0.1:2552
+[akka.cluster.Cluster(akka://ClusterSystem)] Cluster Node [akka.tcp://ClusterSystem@127.0.0.1:2551] - Leader is moving node [akka.tcp://ClusterSystem@127.0.0.1:2552] to [Up]
+[akka.tcp://ClusterSystem@127.0.0.1:2551/user/simpleClusterActor1] Member is Up: akka.tcp://ClusterSystem@127.0.0.1:2552
+[akka.tcp://ClusterSystem@127.0.0.1:2551/user/simpleClusterActor2] Member is Up: akka.tcp://ClusterSystem@127.0.0.1:2552
