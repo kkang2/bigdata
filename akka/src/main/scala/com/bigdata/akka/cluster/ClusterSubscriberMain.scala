@@ -1,11 +1,16 @@
 package com.bigdata.akka.cluster
 
-import akka.actor.ActorSystem
-import akka.actor.Props
-import com.bigdata.akka.cluster.actor.SimpleClusterActor
 import com.typesafe.config.ConfigFactory
 
+import akka.actor.ActorSystem
+import akka.actor.Props
+import com.bigdata.akka.cluster.actor.ClusterSubscriberActor
+
 object SimpleClusterMain extends App {
-	val system 			= ActorSystem("ClusterSystem", ConfigFactory.parseResources("cluster.conf")) // create ActorSystem
-  	val clusterActor = system.actorOf(Props[SimpleClusterActor], "simpleClusterActor") // create Actor
+	val system 				= ActorSystem("ClusterSystem", ConfigFactory.parseResources("cluster1.conf")) // create ActorSystem
+  	val clusterActor1	= system.actorOf(Props[ClusterSubscriberActor], "simpleClusterActor1") // create Actor
+  	
+  	Thread.sleep(3000)
+  	
+  	val clusterActor2 = system.actorOf(Props[ClusterSubscriberActor], "simpleClusterActor2") // create Actor
 }
