@@ -76,6 +76,13 @@
 		<version>10.0.3</version>
 	</dependency>
 	
+	<!-- cluster-singleton -->
+	<dependency>
+		<groupId>com.typesafe.akka</groupId>
+	  	<artifactId>akka-cluster-tools_2.11</artifactId>
+	  	<version>${akka.version}</version>
+	</dependency>
+	
 	<!-- logging -->
 	<dependency>
 	    <groupId>com.typesafe.akka</groupId>

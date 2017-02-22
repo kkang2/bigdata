@@ -16,7 +16,7 @@ object ClusterRouterPoolMain extends App {
 	val receiverRouter = system.actorOf(
 		ClusterRouterPool(RoundRobinPool(5), ClusterRouterPoolSettings (
     	totalInstances = 100, maxInstancesPerNode = 5,
-    	allowLocalRoutees = true/* false 로 설정시 routee 생성안됨 */, useRole = None)).props(Props[ClusterReceiverActor]),
+    	allowLocalRoutees = true/* false 로 설정시 routee 생성안되기 때문에 메세지 전달 실패 */, useRole = None)).props(Props[ClusterReceiverActor]),
   		name = "receiverRouter")
   		
   		Thread.sleep(3000)
