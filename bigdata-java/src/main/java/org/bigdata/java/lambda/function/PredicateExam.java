@@ -7,6 +7,9 @@ import java.util.function.Predicate;
 
 import org.bigdata.java.lambda.domain.Apple;
 
+/*
+ * 추상메소드 : boolean test(T t)
+ * */
 public class PredicateExam {
 	public static void main(String[] args) {
 		List<Apple> inventory = Arrays.asList(new Apple(80,"green"), new Apple(155, "green"), new Apple(120, "red"));
@@ -18,6 +21,8 @@ public class PredicateExam {
         // [Apple{color='green', weight=155}]
         List<Apple> heavyApples2 = filterApples(inventory, (Apple a) -> a.getWeight() > 150);
         System.out.println(heavyApples2);
+        
+        
 	}
 	
 	public static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> p) {
