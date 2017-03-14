@@ -1,22 +1,22 @@
-Security Announcements
-Receiving Security Advisories
-Reporting Vulnerabilities
-Security Related Documentation
-Fixed Security Vulnerabilities
-Introduction
-What is Akka?
-Why Akka?
-Getting Started
-The Obligatory Hello World
-Use-case and Deployment Scenarios
-Examples of use-cases for Akka
-General
-Terminology, Concepts
-Actor Systems
-What is an Actor?
-Supervision and Monitoring
-Actor References, Paths and Addresses
-Location Transparency
-Akka and the Java Memory Model
-Message Delivery Reliability
-Configuration
+1 Security Announcements
+5 Receiving Security Advisories
+19 Reporting Vulnerabilities
+9 Security Related Documentation
+22 Fixed Security Vulnerabilities
+2 Introduction
+16 What is Akka?
+12 Why Akka?
+18 Getting Started
+13 The Obligatory Hello World
+21 Use-case and Deployment Scenarios
+4 Examples of use-cases for Akka
+15 General
+10 Terminology, Concepts
+7 Actor Systems
+20 What is an Actor?
+3 Supervision and Monitoring
+17 Actor References, Paths and Addresses
+8 Location Transparency
+11 Akka and the Java Memory Model
+14 Message Delivery Reliability
+6 Configuration

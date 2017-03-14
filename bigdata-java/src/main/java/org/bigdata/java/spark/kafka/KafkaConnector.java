@@ -37,14 +37,15 @@ public class KafkaConnector {
         }
         
         JavaStreamingContext jsc = new JavaStreamingContext(sparkConf, new Duration(10000));
-
+        
+        /* https://kafka.apache.org/documentation */
         Map<String, Object> kafkaParams = new HashMap<>();
         kafkaParams.put("bootstrap.servers", "192.168.137.128:9092");
         kafkaParams.put("key.deserializer", StringDeserializer.class);
         kafkaParams.put("value.deserializer", StringDeserializer.class);
         kafkaParams.put("group.id", "test");
-        //kafkaParams.put("auto.offset.reset", "latest");
-        kafkaParams.put("enable.auto.commit", false); /* 의미파악하기 */
+        kafkaParams.put("auto.offset.reset", "latest");
+        kafkaParams.put("enable.auto.commit", false);
         
         JavaInputDStream<ConsumerRecord<String, String>> stream = 
 	    	KafkaUtils.createDirectStream(
