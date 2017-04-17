@@ -12,7 +12,7 @@ import akka.cluster.singleton.ClusterSingletonManagerSettings
  *		2개의 싱글턴 액터가 있을때 하나가 죽고 그 죽었던 액터가 다시 떠야 기존에 떠있던 액터가 Oldest가 된다.
  * */
 object SingletonSimpleMain extends App {
-	val system = ActorSystem("ClusterSystem", ConfigFactory.parseResources("cluster1.conf")) // create ActorSystem
+	val system = ActorSystem("ClusterSystem", ConfigFactory.parseResources("singletoncluster.conf")) // create ActorSystem
 	
 	system.actorOf(ClusterSingletonManager.props(
       singletonProps = Props(classOf[ClusterReceiverActor]),

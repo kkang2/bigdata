@@ -7,6 +7,10 @@ import akka.actor.ActorRef
 import akka.routing.RoundRobinPool
 import akka.routing.FromConfig
 
+/*
+ * 라운드로빈 방식으로 메세지 전송하는지 확인. 
+ **/
+
 object RoundRobinRouterMain extends App {
 	val system 	= ActorSystem("RoundRobinActorSystem") // create ActorSystem
 	

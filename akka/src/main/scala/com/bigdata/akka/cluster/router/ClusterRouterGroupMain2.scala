@@ -8,6 +8,10 @@ import akka.cluster.routing.ClusterRouterGroup
 import akka.actor.Props
 import com.bigdata.akka.cluster.actor.ClusterReceiverActor
 
+/*
+ * 클러스터 환경에서 clusterRouter는 같은 노드에서만 통신이 되는것 확인
+ **/
+
 object ClusterRouterGroupMain2 extends App {
 	val system = ActorSystem("ClusterSystem", ConfigFactory.parseResources("cluster2.conf")) // create ActorSystem
   	

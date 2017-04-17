@@ -15,7 +15,7 @@ class ClusterSubscriberActor extends Actor with ActorLogging {
    	case MemberJoined(member) =>
       	log.info("Member status changed to Joining: {}", member.address)
    	case MemberUp(member) =>
-      	log.info("Member is Up: {}", member.address)
+      	log.info("Member is Up: {}", member)
    	case MemberWeaklyUp(member) =>
       	log.info("MemberWeaklyUp: {}", member.address)
       case LeaderChanged(leader) =>

@@ -5,6 +5,10 @@ import akka.actor.Actor
 import akka.actor.ActorSystem
 import akka.actor.Props
 
+/*
+ * 부모액터를 stop 하면 자식액터도 stop됨
+ **/
+
 class StopActorChild extends Actor {
 	def receive = {
   		case "Hi" => println("Hi!!!!")

@@ -29,6 +29,7 @@ class OneForOneStrategyActor extends Actor with ActorLogging {
   		case "NullPointerException" 				=> exceptionActor ! "NullPointerException"
   		case "IllegalArgumentException" 	=> exceptionActor ! "IllegalArgumentException"
   		case "Exception" 									=> exceptionActor ! "Exception"
+  		case _ @ msg 										=> println(s"_ @ msg => [$msg] received!")
   	}
 	
 	override def preStart() {

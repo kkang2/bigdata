@@ -18,5 +18,7 @@ object PublishGroupSimpleMain extends App {
   	
   	val pubGroupActor = system.actorOf(Props[PublisherGroupActor], "pubGroupActor") // create Actor
   	
+  	Thread.sleep(2000)
+  	
   	pubGroupActor ! "Hi Group!!"
 }
