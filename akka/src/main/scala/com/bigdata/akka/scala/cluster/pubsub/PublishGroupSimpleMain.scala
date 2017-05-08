@@ -3,8 +3,8 @@ package com.bigdata.akka.scala.cluster.pubsub
 import akka.actor.ActorSystem
 import com.typesafe.config.ConfigFactory
 import akka.actor.Props
-import com.bigdata.akka.cluster.actor.pubsub.PublisherGroupActor
-import com.bigdata.akka.cluster.actor.pubsub.SubscriberGroupActor
+import com.bigdata.akka.scala.cluster.actor.pubsub.PublisherGroupActor
+import com.bigdata.akka.scala.cluster.actor.pubsub.SubscriberGroupActor
 
 /*
  * conf 파일에 아래와 같이 넣어주면 DistributedPubSub 로딩이 늦어져서 기능이 수초후에 작동되는 것을 방지함.

@@ -6,7 +6,7 @@ import akka.routing.RoundRobinGroup
 import akka.cluster.routing.ClusterRouterGroupSettings
 import akka.cluster.routing.ClusterRouterGroup
 import akka.actor.Props
-import com.bigdata.akka.cluster.scala.actor.ClusterReceiverActor
+import com.bigdata.akka.scala.cluster.actor.ClusterReceiverActor
 
 /*
  * 클러스터 환경에서 clusterRouter는 같은 노드에서만 통신이 되는것 확인
