@@ -56,10 +56,16 @@ public class SimpleProducer {
 	    	    }
 	    	});*/
 	      
-	      for(int i = 0; i < 10; i++) {
-	         producer.send(new ProducerRecord<String, String>(topicName, 
-	            Integer.toString(i), Integer.toString(i)));
-	      }
+	      boolean isGo = true;
+	      
+	      	while(isGo) {
+		      for(int i = 0; i < 10000; i++) {
+		         producer.send(new ProducerRecord<String, String>(topicName, 
+		            Integer.toString(i), Integer.toString(i)));
+		      }
+		      
+		      Thread.sleep(500);
+	      	}
 	      
 	      System.out.println("Message sent successfully");
 	      producer.close();

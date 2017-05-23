@@ -50,7 +50,7 @@
               <transformers>
                 <transformer>
                   <manifestEntries>
-                    <Main-Class>com.bigdata.akka.http.HttpDockerMain</Main-Class>
+                    <Main-Class>com.bigdata.akka.scala.http.SimpleMain</Main-Class>
                     <Build-Number>1</Build-Number>
                   </manifestEntries>
                 </transformer>
@@ -77,12 +77,13 @@
     </plugins>
   </build>
   <properties>
-    <akka.version>2.4.16</akka.version>
+    <akka.version>2.5.0</akka.version>
     <scala.compat.version>2.11</scala.compat.version>
     <scala.version>2.11.8</scala.version>
+    <akka.http.version>10.0.5</akka.http.version>
     <encoding>UTF-8</encoding>
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 </project>
 

@@ -13,9 +13,25 @@ import com.typesafe.config.ConfigFactory
 import akka.actor.Props
 import com.bigdata.akka.scala.cluster.actor.pubsub.SubscriberParamActor
 import com.bigdata.akka.scala.cluster.actor.pubsub.PublisherParamActor
+import com.typesafe.config.Config
 
 object HttpDockerMain extends App {
-	implicit val system = ActorSystem("DockerActorSystem", ConfigFactory.parseResources("cluster_docker.conf"))
+	var config:Config = null
+	
+	if(args.length == 3) {
+		config = ConfigFactory.parseResources("cluster_docker.conf")
+													.withFallback(ConfigFactory.parseString("akka.remote.netty.tcp.hostname=" + "172.30.68.2"))
+													.withFallback(ConfigFactory.parseString("akka.remote.netty.tcp.port=" + "2552"))
+													.withFallback(ConfigFactory.parseString("akka.cluster.seed-nodes=\"[akka.tcp://DockerActorSystem@172.30.57.2:2551]\""))
+	} else {
+		config = ConfigFactory.parseResources("cluster_docker.conf")
+	}
+	
+	//println(config.getConfig("akka.remote.netty.tcp.hostname"))
+	//println(config.getConfig("akka.remote.netty.tcp.port"))
+	//println(config.getConfig("akka.cluster.seed-nodes"))
+	
+	implicit val system = ActorSystem("DockerActorSystem", config)
    implicit val materializer = ActorMaterializer()
    
    // needed for the future flatMap/onComplete in the end
@@ -31,7 +47,7 @@ object HttpDockerMain extends App {
       }
 	}
 
-    val bindingFuture = Http().bindAndHandle(route, "0.0.0.0", 8090)
+   val bindingFuture = Http().bindAndHandle(route, "0.0.0.0", 8090)
 
-    println(s"Server online at http://localhost:8090")
+   println(s"Server online at http://localhost:8090")
 }

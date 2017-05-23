@@ -1,30 +1,23 @@
 package org.bigdata.java;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Arrays;
 
 public class Test {
 	public static void main(String[] args) {
-		/*System.out.println(Arrays.asList(1,2,3).stream().allMatch((num) -> num < 4));
-		System.out.println(Arrays.asList(1,2,3).stream().anyMatch((num) -> num == 1));
-		System.out.println(Arrays.asList(1,2,3).stream().noneMatch((num) -> num > 4));
+		/*List<String> test = new Vector<String>();
 		
-		System.out.println(Arrays.asList(1,2,3).stream().reduce((num1, num2) -> num1 + num2));
-		System.out.println(ZoneId.getAvailableZoneIds());*/
+		for(int i=0; i<99900000; i++){
+			test.add(new String("안녕 "+i));
+		}
 		
-		/*List<String> words = Arrays.asList("java","scala","c","pascal","python");
-		
-		System.out.println(words.stream()
-				.map(word->word.split("")).map(Arrays::stream).collect(Collectors.toList()));
-		
-		String[] arr = "java".split("");
-		
-		for (String string : arr) {
-			System.out.println(string);
+		int size = test.size();
+		for(int i=0; i<size; i++){
+			System.out.println(test.get(i));
+			
+			String temp = test.get(i);
+			temp = null;
+			
+			test.add(new String("난 추가"));
 		}*/
-		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		
-		System.out.println(sdf.format(new Date()));
 	}
 }
