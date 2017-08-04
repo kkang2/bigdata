@@ -17,19 +17,24 @@ import com.typesafe.config.Config
 
 object HttpDockerMain extends App {
 	var config:Config = null
+	var seedNodes:String = "["
 	
 	if(args.length == 3) {
+		args(2).split("-").foreach(str => seedNodes = seedNodes + str + ",")
+		
+		seedNodes = seedNodes.substring(0, seedNodes.length()-1) + "]"
+		
 		config = ConfigFactory.parseResources("cluster_docker.conf")
-													.withFallback(ConfigFactory.parseString("akka.remote.netty.tcp.hostname=" + "172.30.68.2"))
-													.withFallback(ConfigFactory.parseString("akka.remote.netty.tcp.port=" + "2552"))
-													.withFallback(ConfigFactory.parseString("akka.cluster.seed-nodes=\"[akka.tcp://DockerActorSystem@172.30.57.2:2551]\""))
+													.withFallback(ConfigFactory.parseString("akka.remote.netty.tcp.hostname=" + args(0)))
+													.withFallback(ConfigFactory.parseString("akka.remote.netty.tcp.port=" + args(1)))
+													.withFallback(ConfigFactory.parseString("akka.cluster.seed-nodes=" + seedNodes))
 	} else {
 		config = ConfigFactory.parseResources("cluster_docker.conf")
 	}
 	
-	//println(config.getConfig("akka.remote.netty.tcp.hostname"))
-	//println(config.getConfig("akka.remote.netty.tcp.port"))
-	//println(config.getConfig("akka.cluster.seed-nodes"))
+	println(config.getString("akka.remote.netty.tcp.hostname"))
+	println(config.getString("akka.remote.netty.tcp.port"))
+	println(config.getList("akka.cluster.seed-nodes"))
 	
 	implicit val system = ActorSystem("DockerActorSystem", config)
    implicit val materializer = ActorMaterializer()

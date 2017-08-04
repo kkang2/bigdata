@@ -12,4 +12,5 @@ object BasicSource extends App {
 	val intSource: Source[Int, NotUsed] = Source(1 to 100)
 	
 	intSource.runForeach { i => println(i) }
+	intSource.runForeach { i => println(i) }
 }

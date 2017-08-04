@@ -10,11 +10,11 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 public class SimpleConsumer {
    public static void main(String[] args) throws Exception {
       //Kafka consumer configuration settings
-      String topicName = "test";
+      String topicName = "sample";
       Properties props = new Properties();
       
       props.put("bootstrap.servers", "192.168.137.128:9092");
-      props.put("group.id", "test");
+      props.put("group.id", "group-1");
       props.put("enable.auto.commit", "true");
       props.put("auto.commit.interval.ms", "1000");
       props.put("session.timeout.ms", "30000");

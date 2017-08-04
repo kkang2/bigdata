@@ -41,7 +41,7 @@ public class KafkaSample {
     Set<String> topics2 = new HashSet<>();
     topics2.add("test");
 
-    JavaPairReceiverInputDStream<String, String> ds1 = KafkaUtils.createStream(ssc, "localhost:2181", "test-consumer-group1", topics1);
+    /*JavaPairReceiverInputDStream<String, String> ds1 = KafkaUtils.createStream(ssc, "localhost:2181", "test-consumer-group1", topics1);
     JavaPairInputDStream<String, String> ds2 = KafkaUtils.<String, String, StringDecoder, StringDecoder> createDirectStream(ssc, 
         String.class, 
         String.class, 
@@ -51,7 +51,7 @@ public class KafkaSample {
         topics2);
 
     ds1.print();
-    ds2.print();
+    ds2.print();*/
 
     ssc.start();
     ssc.awaitTermination();

@@ -50,7 +50,7 @@
               <transformers>
                 <transformer>
                   <manifestEntries>
-                    <Main-Class>com.bigdata.akka.scala.http.SimpleMain</Main-Class>
+                    <Main-Class>com.bigdata.akka.java.http.SimpleMain</Main-Class>
                     <Build-Number>1</Build-Number>
                   </manifestEntries>
                 </transformer>

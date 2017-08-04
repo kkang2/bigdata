@@ -137,7 +137,7 @@
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <manifestEntries>
-                  	<Main-Class>com.bigdata.akka.scala.http.HttpDockerMain</Main-Class>
+                  	<Main-Class>com.bigdata.akka.java.http.SimpleMain</Main-Class>
                     <Build-Number>1</Build-Number>
                   </manifestEntries>
                 </transformer>
