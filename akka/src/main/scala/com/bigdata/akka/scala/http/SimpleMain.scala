@@ -13,6 +13,8 @@ object SimpleMain extends App {
    implicit val materializer = ActorMaterializer()
    // needed for the future flatMap/onComplete in the end
    implicit val executionContext = system.dispatcher
+   
+   final case class Data(contents:String)
 
    val route = 
    	path("hello") {
@@ -36,7 +38,21 @@ object SimpleMain extends App {
 	   	get {
 	      	complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "<h1>Get Request Say hi to akka-http</h1>"))
 	      }
-		}
+		} ~
+		path("tt") {
+	   	post {
+	   		entity(as[String]) {	data =>
+	   			println("post 도착 : " + data)
+	   			complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "<h1>Get Request Say hi to akka-http</h1>"))
+	   		}
+	      }
+		} /*~
+		path("/") {
+	   	post {
+	   		println("post 도착")
+	      	complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "<h1>Get Request Say hi to akka-http</h1>"))
+	      }
+		}*/
 
     val bindingFuture = Http().bindAndHandle(route, "0.0.0.0", 8080)
 
