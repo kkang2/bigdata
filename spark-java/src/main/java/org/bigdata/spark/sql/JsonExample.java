@@ -16,7 +16,7 @@ public class JsonExample {
 		final String jsonPath = "src/main/resources/json";
 		SparkSession spark = SparkSessionUtil.getSession(SparkConfUtil.getConf("SimpleApp", "local[*]"));
 		StructType schema = new StructType().add("time", DataTypes.TimestampType).add("action", DataTypes.StringType);
-		
+
 		Dataset<Row> ds = 
 			spark
 				.readStream()
